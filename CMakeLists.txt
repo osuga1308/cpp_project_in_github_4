@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.10)
+project(cpp_project_in_github_4)
+
+add_executable(main src/main.cpp)
+
