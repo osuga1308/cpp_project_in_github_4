@@ -5,7 +5,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  workflow_dispatch:
+  workflow_dispatch:  # 手動実行も可能
 
 jobs:
   build:
@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        submodules: true   # ← ここがポイント！
+        submodules: true
 
     - name: Configure CMake
       run: cmake -B build -S .
@@ -26,5 +26,5 @@ jobs:
       run: cmake --build build
 
     - name: Run tests
-      run: ctest --test-dir build
+      run: ctest --test-dir build -C Debug --output-on-failure
 
