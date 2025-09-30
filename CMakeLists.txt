@@ -3,3 +3,7 @@ project(cpp_project_in_github_4)
 
 add_executable(main src/main.cpp)
 
+
+enable_testing()
+add_subdirectory(test)
+
